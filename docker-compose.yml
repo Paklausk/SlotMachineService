@@ -1,0 +1,12 @@
+services:
+
+    mongodb:
+        image: mongodb/mongodb-community-server:8.0.3-ubi9
+        container_name: mongodb
+        environment:
+            - MONGO_INITDB_DATABASE=slot-machine
+        ports:
+            - "27017:27017"
+        volumes:
+            - "./mongodb/data:/data/db"
+            - "./mongodb/configdb:/data/configdb"
